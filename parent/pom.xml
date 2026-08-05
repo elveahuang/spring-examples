@@ -20,16 +20,6 @@
             <id>aliyun-spring</id>
             <url>https://maven.aliyun.com/repository/spring</url>
         </repository>
-        <repository><!-- embabel -->
-            <id>embabel</id>
-            <url>https://repo.embabel.com/artifactory/libs-snapshot</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository><!-- aliyun -->
@@ -52,7 +42,7 @@
         <!-- spring -->
         <spring-ai.version>2.0.0</spring-ai.version>
         <spring-ai-agent-utils.version>0.10.0</spring-ai-agent-utils.version>
-        <spring-ai-session.version>0.5.0</spring-ai-session.version>
+        <spring-ai-session.version>0.7.0</spring-ai-session.version>
         <spring-ai-mcp-security.version>0.1.13</spring-ai-mcp-security.version>
         <spring-ai-extensions.version>2.0.0-M1.1</spring-ai-extensions.version>
         <spring-ai-alibaba.version>2.0.0-M1.1</spring-ai-alibaba.version>
@@ -63,7 +53,6 @@
         <openai.version>4.41.0</openai.version>
         <dashscope.version>2.22.24</dashscope.version>
         <agent-scope.version>2.0.0</agent-scope.version>
-        <embabel-agent.version>1.5.0-SNAPSHOT</embabel-agent.version>
         <!-- 3rd party -->
         <asm.version>9.10.1</asm.version>
         <cosid.version>3.2.0</cosid.version>
@@ -125,13 +114,6 @@
                 <groupId>io.agentscope</groupId>
                 <artifactId>agentscope-bom</artifactId>
                 <version>${agent-scope.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency><!-- embabel-agent -->
-                <groupId>com.embabel.agent</groupId>
-                <artifactId>embabel-agent-dependencies</artifactId>
-                <version>${embabel-agent.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
