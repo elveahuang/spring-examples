@@ -1,5 +1,6 @@
 package cc.elvea.boot.ai;
 
+import cc.elvea.boot.ai.tools.CommonTools;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -40,6 +41,9 @@ public class OpenAiTests {
     @Autowired
     private SessionMemoryAdvisor sessionMemoryAdvisor;
 
+    @Autowired
+    private CommonTools commonTools;
+
     @Test
     public void baseTest() {
         Assertions.assertNotNull(this.openAiChatModel);
@@ -57,11 +61,12 @@ public class OpenAiTests {
 
         ChatClient chatClient = ChatClient.builder(this.openAiChatModel)
             .defaultAdvisors(this.sessionMemoryAdvisor)
+            .defaultTools(this.commonTools)
             .build();
 
         ChatResponse response = chatClient
             .prompt()
-            .user("你好")
+            .user("查询系统时间")
             .advisors(a -> a.param(SessionMemoryAdvisor.SESSION_ID_CONTEXT_KEY, "session-abc"))
             .call()
             .chatResponse();
